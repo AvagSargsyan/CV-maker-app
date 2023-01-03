@@ -33,7 +33,7 @@ function App() {
           updateFieldValue={updateFieldValue}
         />
       ) : (
-        <MainInfo />
+        <MainInfo mainInfoState={mainInfoState} />
       )}
     </div>
   );
