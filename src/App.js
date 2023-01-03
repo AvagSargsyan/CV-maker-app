@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import MainInfoEdit from './components/MainInfoEdit';
 import MainInfo from './components/MainInfo';
+import EducationEdit from './components/EducationEdit';
 
 function App() {
   const [editMode, setEditMode] = useState(true);
@@ -10,6 +11,17 @@ function App() {
     email: 'Email',
     phoneNumber: 'Phone Number',
   });
+
+  const [educationState, setEducationState] = useState([
+    // {
+    //   id: Math.random(),
+    //   institution: '',
+    //   from: '',
+    //   to: '',
+    //   qualification: '',
+    // },
+  ]);
+
   const updateFieldValue = (fieldName, newText) => {
     setMainInfoState((prevState) => {
       return {
@@ -17,6 +29,18 @@ function App() {
         [fieldName]: newText,
       };
     });
+  };
+
+  const deleteEducationUnit = (id) => {
+    const newState = educationState.filter((unit) => unit.id !== id);
+
+    setEducationState(newState);
+  };
+
+  const addEducationUnit = (newUnit) => {
+    setEducationState((prevState) => [...prevState, newUnit]);
+    console.log(newUnit);
+    console.log(educationState);
   };
 
   return (
@@ -28,10 +52,17 @@ function App() {
       </button>
 
       {editMode ? (
-        <MainInfoEdit
-          mainInfoState={mainInfoState}
-          updateFieldValue={updateFieldValue}
-        />
+        <>
+          <MainInfoEdit
+            mainInfoState={mainInfoState}
+            updateFieldValue={updateFieldValue}
+          />
+          <EducationEdit
+            educationState={educationState}
+            deleteEducationUnit={deleteEducationUnit}
+            addEducationUnit={addEducationUnit}
+          />
+        </>
       ) : (
         <MainInfo mainInfoState={mainInfoState} />
       )}
