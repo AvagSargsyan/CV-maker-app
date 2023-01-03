@@ -1,5 +1,23 @@
 // import fonts
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
 
 // variables
-$main-bg: rgb(234, 236, 236);
+$main-bg-color: rgb(234, 236, 236);
+$btn-bg-color: rgb(218, 216, 216);
+$btn-color: #666;
+
+// mixins
+@mixin button {
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: $btn-bg-color;
+  color: $btn-color;
+
+  &:hover {
+    color: #000;
+  }
+}

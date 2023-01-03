@@ -1,8 +1,9 @@
 import Field from './Field';
+import '../styles/MainInfoEdit.scss';
 
 export default function MainInfoEdit({ mainInfoState, updateFieldValue }) {
   return (
-    <div>
+    <div className="main-info-edit">
       <Field
         fieldName="firstName"
         fieldValue={mainInfoState.firstName}

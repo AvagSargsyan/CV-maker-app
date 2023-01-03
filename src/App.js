@@ -15,15 +15,7 @@ function App() {
     phoneNumber: 'Phone Number',
   });
 
-  const [educationState, setEducationState] = useState([
-    // {
-    //   id: Math.random(),
-    //   institution: '',
-    //   from: '',
-    //   to: '',
-    //   qualification: '',
-    // },
-  ]);
+  const [educationState, setEducationState] = useState([]);
 
   const [experienceState, setExperienceState] = useState([]);
 
@@ -60,7 +52,10 @@ function App() {
     <div className="App">
       <h1>CV Generator</h1>
 
-      <button onClick={() => setEditMode((prevMode) => !prevMode)}>
+      <button
+        onClick={() => setEditMode((prevMode) => !prevMode)}
+        className="cv-mode-btn"
+      >
         {editMode ? 'Preview' : 'Update CV'}
       </button>
 

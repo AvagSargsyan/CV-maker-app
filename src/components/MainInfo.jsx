@@ -1,6 +1,8 @@
+import '../styles/MainInfo.scss';
+
 export default function MainInfo({ mainInfoState }) {
   return (
-    <div>
+    <div className="main-info">
       <div>{mainInfoState.firstName}</div>
       <div>{mainInfoState.lastName}</div>
       <div>{mainInfoState.email}</div>

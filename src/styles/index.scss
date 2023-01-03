@@ -8,11 +8,11 @@
 }
 
 body {
-  width: 100vw;
   padding: 1rem;
   display: flex;
   justify-content: center;
-  background: $main-bg;
+  background: $main-bg-color;
+  text-align: center;
 
   #root {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -23,11 +23,21 @@ body {
     background: #fff;
 
     .App {
+      width: 100%;
       padding: 1.5rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
+      gap: 2rem;
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .cv-mode-btn {
+        @include button;
+      }
     }
   }
 }
