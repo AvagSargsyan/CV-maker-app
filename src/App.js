@@ -3,6 +3,7 @@ import MainInfoEdit from './components/MainInfoEdit';
 import MainInfo from './components/MainInfo';
 import EducationEdit from './components/EducationEdit';
 import Education from './components/Education';
+import ExperienceEdit from './components/ExperienceEdit';
 
 function App() {
   const [editMode, setEditMode] = useState(true);
@@ -23,6 +24,8 @@ function App() {
     // },
   ]);
 
+  const [experienceState, setExperienceState] = useState([]);
+
   const updateFieldValue = (fieldName, newText) => {
     setMainInfoState((prevState) => {
       return {
@@ -40,8 +43,16 @@ function App() {
 
   const addEducationUnit = (newUnit) => {
     setEducationState((prevState) => [...prevState, newUnit]);
-    console.log(newUnit);
-    console.log(educationState);
+  };
+
+  const addExperienceUnit = (newUnit) => {
+    setExperienceState((prevState) => [...prevState, newUnit]);
+  };
+
+  const deleteExperienceUnit = (id) => {
+    const newState = experienceState.filter((unit) => unit.id !== id);
+
+    setExperienceState(newState);
   };
 
   return (
@@ -62,6 +73,11 @@ function App() {
             educationState={educationState}
             deleteEducationUnit={deleteEducationUnit}
             addEducationUnit={addEducationUnit}
+          />
+          <ExperienceEdit
+            experienceState={experienceState}
+            deleteExperienceUnit={deleteExperienceUnit}
+            addExperienceUnit={addExperienceUnit}
           />
         </>
       ) : (
