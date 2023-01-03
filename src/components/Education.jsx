@@ -1,15 +1,27 @@
+import '../styles/Education.scss';
+
 export default function Education({ educationState }) {
   return (
-    <div>
+    <>
       <h2>Educational Experience</h2>
-      {educationState.map((unit) => (
-        <div className="education-unit-prev" key={unit.id}>
-          <div>Institution: {unit.institution}</div>
-          <div>From: {unit.from}</div>
-          <div>To: {unit.to}</div>
-          <div>Qualification: {unit.qualification}</div>
-        </div>
-      ))}
-    </div>
+      <div className="education-prev">
+        {educationState.map((unit) => (
+          <div className="education-unit-prev" key={unit.id}>
+            <div>
+              <span>Institution:</span> {unit.institution}
+            </div>
+            <div>
+              <span>From:</span> {unit.from}
+            </div>
+            <div>
+              <span>To:</span> {unit.to}
+            </div>
+            <div>
+              <span>Qualification:</span> {unit.qualification}
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
   );
 }

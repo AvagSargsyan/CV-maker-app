@@ -38,7 +38,7 @@ export default function ExperienceEdit({
   };
 
   return (
-    <div className="education-edit">
+    <div className="experience-edit">
       <h2>Practical Experience</h2>
       {addUnitMode ? (
         <form onSubmit={(e) => submitNewUnit(e)}>
