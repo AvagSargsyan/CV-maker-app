@@ -98,7 +98,7 @@ export default function ExperienceEdit({
             <div>Company Name: {unit.companyName}</div>
             <div>Title: {unit.title}</div>
             <div>Tasks: {unit.tasks}</div>
-            <div>Year Experience: {unit.yearExperience}</div>
+            <div>Experience (years): {unit.yearExperience}</div>
             <button onClick={() => deleteExperienceUnit(unit.id)}>
               Delete
             </button>

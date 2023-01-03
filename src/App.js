@@ -4,6 +4,7 @@ import MainInfo from './components/MainInfo';
 import EducationEdit from './components/EducationEdit';
 import Education from './components/Education';
 import ExperienceEdit from './components/ExperienceEdit';
+import Experience from './components/Experience';
 
 function App() {
   const [editMode, setEditMode] = useState(true);
@@ -84,6 +85,7 @@ function App() {
         <>
           <MainInfo mainInfoState={mainInfoState} />
           <Education educationState={educationState} />
+          <Experience experienceState={experienceState} />
         </>
       )}
     </div>
