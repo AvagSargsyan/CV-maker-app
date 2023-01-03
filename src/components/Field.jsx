@@ -17,6 +17,7 @@ export default function Field({ fieldName, fieldValue, updateFieldValue }) {
         </>
       ) : (
         <form
+          className="field-edit"
           onSubmit={(e) => {
             e.preventDefault();
             if (inputValue) {

@@ -17,4 +17,22 @@
       padding: 0.5rem 2rem;
     }
   }
+
+  .field-edit {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    input {
+      padding: 0.2rem;
+      border-radius: 4px;
+      border: 1px solid gray;
+      background: $main-bg-color;
+      font-size: 1.1rem;
+      max-width: 28rem;
+      width: 25rem;
+      min-width: 7rem;
+    }
+  }
 }
