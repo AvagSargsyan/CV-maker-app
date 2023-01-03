@@ -7,7 +7,7 @@ export default function EducationEdit({
 }) {
   const [addUnitMode, setAddUnitMode] = useState(false);
   const [unitFormData, setUnitFormData] = useState({
-    id: 0,
+    id: Math.random(),
     institution: '',
     from: '',
     to: '',
@@ -95,17 +95,13 @@ export default function EducationEdit({
         </form>
       ) : (
         educationState.map((unit) => (
-          <>
-            <div className="education-unit">
-              <div>Institution: {unit.institution}</div>
-              <div>From: {unit.from}</div>
-              <div>To: {unit.to}</div>
-              <div>Qualification: {unit.qualification}</div>
-              <button onClick={() => deleteEducationUnit(unit.id)}>
-                Delete
-              </button>
-            </div>
-          </>
+          <div className="education-unit" key={unit.id}>
+            <div>Institution: {unit.institution}</div>
+            <div>From: {unit.from}</div>
+            <div>To: {unit.to}</div>
+            <div>Qualification: {unit.qualification}</div>
+            <button onClick={() => deleteEducationUnit(unit.id)}>Delete</button>
+          </div>
         ))
       )}
       <button onClick={toggleAddUnitMode}>
