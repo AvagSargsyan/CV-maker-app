@@ -1,0 +1,33 @@
+@import '_base';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+body {
+  width: 100vw;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  background: $main-bg;
+
+  #root {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    background: #fff;
+
+    .App {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+}
