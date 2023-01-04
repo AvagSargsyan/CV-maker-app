@@ -1,3 +1,4 @@
+import '../styles/ExperienceEdit.scss';
 import { useState } from 'react';
 
 export default function ExperienceEdit({
@@ -42,66 +43,74 @@ export default function ExperienceEdit({
       <h2>Practical Experience</h2>
       {addUnitMode ? (
         <form onSubmit={(e) => submitNewUnit(e)}>
-          <label htmlFor="companyName">Company Name:</label>
-          <input
-            type="text"
-            id="companyName"
-            value={unitFormData.companyName}
-            onChange={(e) =>
-              setUnitFormData({
-                ...unitFormData,
-                companyName: e.target.value,
-              })
-            }
-          />
-          <label htmlFor="title">Title:</label>
-          <input
-            type="text"
-            id="title"
-            value={unitFormData.title}
-            onChange={(e) =>
-              setUnitFormData({
-                ...unitFormData,
-                title: e.target.value,
-              })
-            }
-          />
-          <label htmlFor="tasks">Tasks:</label>
-          <input
-            type="text"
-            id="tasks"
-            value={unitFormData.tasks}
-            onChange={(e) =>
-              setUnitFormData({
-                ...unitFormData,
-                tasks: e.target.value,
-              })
-            }
-          />
-          <label htmlFor="yearExperience">Year Experience:</label>
-          <input
-            type="number"
-            id="yearExperience"
-            value={unitFormData.yearExperience}
-            onChange={(e) =>
-              setUnitFormData({
-                ...unitFormData,
-                yearExperience: e.target.value,
-              })
-            }
-          />
+          <div>
+            <label htmlFor="companyName">Company Name:</label>
+            <input
+              type="text"
+              id="companyName"
+              value={unitFormData.companyName}
+              onChange={(e) =>
+                setUnitFormData({
+                  ...unitFormData,
+                  companyName: e.target.value,
+                })
+              }
+            />
+          </div>
+          <div>
+            <label htmlFor="title">Title:</label>
+            <input
+              type="text"
+              id="title"
+              value={unitFormData.title}
+              onChange={(e) =>
+                setUnitFormData({
+                  ...unitFormData,
+                  title: e.target.value,
+                })
+              }
+            />
+          </div>
+          <div>
+            <label htmlFor="tasks">Tasks:</label>
+            <input
+              type="text"
+              id="tasks"
+              value={unitFormData.tasks}
+              onChange={(e) =>
+                setUnitFormData({
+                  ...unitFormData,
+                  tasks: e.target.value,
+                })
+              }
+            />
+          </div>
+          <div>
+            <label htmlFor="yearExperience">Year Experience:</label>
+            <input
+              type="number"
+              id="yearExperience"
+              value={unitFormData.yearExperience}
+              onChange={(e) =>
+                setUnitFormData({
+                  ...unitFormData,
+                  yearExperience: e.target.value,
+                })
+              }
+            />
+          </div>
           <button>Submit</button>
         </form>
       ) : (
         experienceState.map((unit) => (
           <div className="experience-unit" key={unit.id}>
-            <div>Company Name: {unit.companyName}</div>
-            <div>Title: {unit.title}</div>
-            <div>Tasks: {unit.tasks}</div>
-            <div>Experience (years): {unit.yearExperience}</div>
-            <button onClick={() => deleteExperienceUnit(unit.id)}>
-              Delete
-            </button>
+            <div className="experience-unit-text">
+              <div>Company Name: {unit.companyName}</div>
+              <div>Title: {unit.title}</div>
+              <div>Tasks: {unit.tasks}</div>
+              <div>Experience (years): {unit.yearExperience}</div>
+            </div>
+            <button onClick={() => deleteExperienceUnit(unit.id)}>X</button>
           </div>
         ))
       )}
