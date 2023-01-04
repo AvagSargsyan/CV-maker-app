@@ -1,3 +1,19 @@
+# CV-maker-app
+
+A CV maker app that lets you edit and view different fields.
+
+![CV maker app](./src/screenshots/screenshot-edit.png)\
+![CV maker app](./src/screenshots/screenshot-preview.png)
+
+## Built with
+
+- ReactJS
+- SASS
+
+## Authors
+
+This project is created by [me](https://github.com/AvagSargsyan) during [The Odin Project](https://www.theodinproject.com/) Full stack developer curriculum.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
